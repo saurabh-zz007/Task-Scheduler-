@@ -11,6 +11,7 @@ class SocialAuthButton extends StatelessWidget {
   final SocialButtonType type;
   final VoidCallback? onPressed;
   final bool isLoading;
+  final bool isLocked;
   final String? customLabel;
 
   const SocialAuthButton({
@@ -18,6 +19,7 @@ class SocialAuthButton extends StatelessWidget {
     required this.type,
     required this.onPressed,
     this.isLoading = false,
+    this.isLocked = false,
     this.customLabel,
   });
 
@@ -71,9 +73,9 @@ class SocialAuthButton extends StatelessWidget {
     return SizedBox(
       height: 52,
       child: OutlinedButton(
-        onPressed: isLoading ? null : onPressed,
+        onPressed: (isLoading || isLocked) ? null : onPressed,
         style: OutlinedButton.styleFrom(
-          backgroundColor: bgColor,
+          backgroundColor: isLocked ? bgColor.withValues(alpha: 0.6) : bgColor,
           foregroundColor: textColor,
           side: BorderSide(color: borderColor, width: 1.2),
           elevation: 0,
@@ -93,12 +95,20 @@ class SocialAuthButton extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
-                  color: textColor,
+                  color: textColor.withValues(alpha: isLocked ? 0.6 : 1.0),
                   letterSpacing: -0.2,
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
+            if (isLocked) ...[
+              const SizedBox(width: 8),
+              const Icon(
+                Icons.lock_rounded,
+                size: 14,
+                color: Color(0xFFF59E0B),
+              ),
+            ],
           ],
         ),
       ),

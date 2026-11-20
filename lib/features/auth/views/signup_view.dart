@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_scheduler/core/constants/app_strings.dart';
 import 'package:task_scheduler/core/theme/app_theme.dart';
 import 'package:task_scheduler/features/auth/viewmodels/auth_viewmodel.dart';
 import 'package:task_scheduler/features/auth/views/widgets/blurred_loading_overlay.dart';
@@ -271,6 +272,8 @@ class SignupView extends StatelessWidget {
                               children: [
                                 _CircularSocialButton(
                                   backgroundColor: const Color(0xFF3B5998),
+                                  isLocked: true,
+                                  lockedTooltip: AppStrings.facebookLocked,
                                   onTap: viewModel.isLoading.value
                                       ? null
                                       : viewModel.signInWithFacebook,
@@ -303,6 +306,8 @@ class SignupView extends StatelessWidget {
                                 const SizedBox(width: 18),
                                 _CircularSocialButton(
                                   backgroundColor: Colors.black,
+                                  isLocked: true,
+                                  lockedTooltip: AppStrings.appleLocked,
                                   onTap: viewModel.isLoading.value
                                       ? null
                                       : viewModel.signInWithApple,
@@ -405,25 +410,86 @@ class _CircularSocialButton extends StatelessWidget {
   final Color backgroundColor;
   final VoidCallback? onTap;
   final Widget child;
+  final bool isLocked;
+  final String? lockedTooltip;
 
   const _CircularSocialButton({
     required this.backgroundColor,
     required this.onTap,
     required this.child,
+    this.isLocked = false,
+    this.lockedTooltip,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: backgroundColor,
-      shape: const CircleBorder(),
-      elevation: 3,
-      shadowColor: backgroundColor.withValues(alpha: 0.35),
-      child: InkWell(
-        onTap: onTap,
-        customBorder: const CircleBorder(),
-        child: SizedBox(width: 52, height: 52, child: Center(child: child)),
-      ),
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Opacity(
+          opacity: isLocked ? 0.70 : 1.0,
+          child: Material(
+            color: backgroundColor,
+            shape: const CircleBorder(),
+            elevation: isLocked ? 1 : 3,
+            shadowColor: backgroundColor.withValues(alpha: 0.35),
+            child: InkWell(
+              onTap: isLocked
+                  ? () {
+                      if (lockedTooltip != null) {
+                        Get.snackbar(
+                          'Option Locked',
+                          lockedTooltip!,
+                          snackPosition: SnackPosition.BOTTOM,
+                          backgroundColor: const Color(0xFF1F2937).withValues(alpha: 0.95),
+                          colorText: Colors.white,
+                          margin: const EdgeInsets.all(16),
+                          borderRadius: 12,
+                          duration: const Duration(seconds: 2),
+                          icon: const Icon(
+                            Icons.lock_rounded,
+                            color: Color(0xFFFDE047),
+                            size: 20,
+                          ),
+                        );
+                      }
+                    }
+                  : onTap,
+              customBorder: const CircleBorder(),
+              child: SizedBox(
+                width: 52,
+                height: 52,
+                child: Center(child: child),
+              ),
+            ),
+          ),
+        ),
+        if (isLocked)
+          Positioned(
+            top: -2,
+            right: -2,
+            child: Container(
+              padding: const EdgeInsets.all(3.5),
+              decoration: BoxDecoration(
+                color: const Color(0xFF374151),
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 1.5),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.25),
+                    blurRadius: 4,
+                    offset: const Offset(0, 1),
+                  ),
+                ],
+              ),
+              child: const Icon(
+                Icons.lock_rounded,
+                size: 10,
+                color: Color(0xFFFDE047),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

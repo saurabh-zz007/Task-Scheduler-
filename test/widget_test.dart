@@ -8,6 +8,8 @@ void main() {
     expect(AppStrings.appName, 'Task Scheduler');
     expect(AppStrings.welcomeBack, 'Welcome Back');
     expect(AppStrings.createAccount, 'Create Account');
+    expect(AppStrings.facebookLocked, contains('locked'));
+    expect(AppStrings.appleLocked, contains('locked'));
   });
 
   test('UserModel serialization and copyWith', () {
