@@ -1,5 +1,6 @@
 # Miscellaneous
 *.class
+*.jks
 *.log
 *.pyc
 *.swp
@@ -48,3 +49,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+/upload-keystore.jks
+

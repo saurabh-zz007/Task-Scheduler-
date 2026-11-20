@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "805100949632-1o1vbjedrpcrgpcq7efbaaomudhf9q45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saurabh.task_scheduler",
+            "certificate_hash": "07b1afbf211f7644a2d5b585099ebc6a37ed610c"
+          }
+        },
+        {
           "client_id": "805100949632-i743e1hvbn5rtm8198tatq5u3v92balp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
