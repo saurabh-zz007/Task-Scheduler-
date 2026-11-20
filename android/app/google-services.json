@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "805100949632",
+    "project_id": "task-scheduler-85040",
+    "storage_bucket": "task-scheduler-85040.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805100949632:android:1d1ef44dfb96952fd11665",
+        "android_client_info": {
+          "package_name": "com.saurabh.task_scheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805100949632-i743e1hvbn5rtm8198tatq5u3v92balp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saurabh.task_scheduler",
+            "certificate_hash": "0ba6b8d3ca834fe6f35dd2c2cbc5f2b7e60b2a14"
+          }
+        },
+        {
+          "client_id": "805100949632-05tmnmu5d5g59sm6ml99d8cdfhp29h7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIMpkH5ImDt4ipTru95l6jymC4f3Tn174"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805100949632-05tmnmu5d5g59sm6ml99d8cdfhp29h7k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "805100949632-0kc1h74ve2omofa3dhkonmvs3l2082k1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saurabh.taskScheduler"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
