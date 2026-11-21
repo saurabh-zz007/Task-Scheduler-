@@ -14,7 +14,7 @@ A modern, production-grade cross-platform task scheduling and productivity appli
 
 > [!TIP]
 > **Ready to test on your Android device?**  
-> The compiled APK is ready to download directly from the **[GitHub Releases](https://github.com/your-username/task_scheduler/releases)** tab. Download the `.apk` file, install it on your device, and start scheduling right away!
+> The compiled APK is ready to download directly from the **[GitHub Releases](https://github.com/saurabh-zz007/Task-Scheduler-/releases#release-v2.0.0)** tab. Download the `.apk` file, install it on your device, and start scheduling right away!
 
 ---
 
@@ -26,6 +26,7 @@ A modern, production-grade cross-platform task scheduling and productivity appli
 - **Chronological Sectioning:** Automatic grouping into *Overdue*, *Today*, *Tomorrow*, *This week*, and *Upcoming*.
 - **Swipe-to-Delete with Undo:** Instant cloud removal with a safety snackbar for restoring tasks.
 - **Calendar View:** Dedicated monthly schedule view to inspect tasks by specific dates.
+- **[ScreenShots](https://drive.google.com/drive/folders/1RO7k3tz0d8guHCpBSPIgWMJFTyu4lJA6?usp=sharing)**
 
 ---
 
@@ -35,17 +36,16 @@ A modern, production-grade cross-platform task scheduling and productivity appli
 - **Email & Password Authentication:** Complete sign-up, sign-in, and session persistence via Firebase Auth.
 - **Google Sign-In:** One-tap sign-in with native credential exchange.
 - **Sanitized Error Handling:** Intelligent error mapper ensures no technical jargon, internal codes, JSON snippets, or stack traces leak to the UI.
-- **Full-Screen Blurred Overlay:** Smooth, frosted backdrop loader prevents button shrinking or UI glitches during authentication.
 
 ### 📝 Task Management (CRUD)
 - **Create Tasks:** Modal bottom sheet with title, description, smart date pickers, quick-select chips (*Today*, *Tomorrow*, *In 2 days*, *Next week*), and priority selector.
 - **Real-Time Cloud Firestore Sync:** All user tasks live under `users/{userId}/tasks/{taskId}` with zero local database baggage.
 - **Immediate Reflection:** Optimistic UI state updates ensure newly created tasks reflect on screen instantly.
-- **Immediate Cloud Deletion:** Swipe-to-delete immediately removes the document from Firestore (preventing resurrecting tasks on restart), backed by an **Undo** action.
+- **Immediate Cloud Deletion:** Swipe-to-delete immediately removes the document from Firestore, backed by an **Undo** action.
 - **Optimistic Checkbox Toggle:** One-tap completion toggle with muted strikethrough styling and automatic cloud sync.
 
 ### 🔍 Search, Filter & Calendar
-- **True Pill Search Bar:** Live real-time search across task titles and descriptions.
+- **Pill Search Bar:** Live real-time search across task titles and descriptions.
 - **Priority Filtering:** Filter by **High**, **Medium**, or **Low** priority via a bottom sheet.
 - **Completion Filter & Batch Clear:** Toggle visibility of completed tasks or batch-clear completed tasks in an atomic Firestore batch.
 - **Calendar Schedule Mode:** Switch to calendar tab to view tasks for any selected day.
@@ -116,13 +116,6 @@ lib/
 
 ### 🧩 Data Flow (MVVM)
 
-```mermaid
-flowchart LR
-    A["View (HomeView / LoginView)"] <-->|"Reactive Obx / GetView"| B["ViewModel (GetxController)"]
-    B <-->|"Service Calls"| C["Service Layer (AuthService / TaskService)"]
-    C <-->|"Cloud Sync"| D["Firebase Auth & Cloud Firestore"]
-    E["NetworkService"] -->|"Connection State"| B
-```
 
 ---
 
@@ -137,7 +130,7 @@ The following four features have specific limitations in the current version:
 
 2. **Facebook Login:**
    - **Status:** The Facebook SDK and OAuth credential authentication logic are fully implemented via `flutter_facebook_auth`.
-   - **Reason:** Meta for Developers requires app review, business verification, and approval before public Facebook login permissions are unlocked. The Facebook Developer account submission is currently pending approval.
+   - **Reason:** The Facebook Developer account submission is currently pending approval.
    - **UI Indicator:** The Facebook button on both Login and Sign-Up screens has a **lock badge** (`Icons.lock_rounded`) and displays a *"Coming soon"* notice upon tapping.
 
 3. **Forgot Password:**
@@ -158,7 +151,6 @@ The following four features have specific limitations in the current version:
 - [ ] **Mandatory Email Verification:** Introduce an email verification banner/gate before granting full workspace access.
 - [ ] **Push Notifications & Due Date Reminders:** Integrate Firebase Cloud Messaging (FCM) and `flutter_local_notifications` for upcoming and overdue task alerts.
 - [ ] **Recurring Gig Tasks:** Support daily, weekly, or custom recurring intervals for routine tasks.
-- [ ] **Categories & Tags:** Custom user-defined tags (e.g., *Uber*, *DoorDash*, *Freelance*, *Personal*).
 - [ ] **Export & Reports:** Export scheduled tasks and completed history to PDF or CSV for tax and gig-earnings records.
 
 ---
@@ -181,15 +173,15 @@ The following four features have specific limitations in the current version:
 
 ### Prerequisites
 - [Flutter SDK](https://docs.flutter.dev/get-started/install) installed (version 3.10.7 or higher).
-- Android Studio / Xcode (for simulators/emulators).
+- Android Studio (for simulators/emulators).
 - A Firebase project configured with Authentication (Email/Password & Google) and Cloud Firestore.
 
 ### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/task_scheduler.git
-   cd task_scheduler
+   git clone https://github.com/saurabh-zz007/Task-Scheduler-.git
+   cd Task-Scheduler-
    ```
 
 2. **Install dependencies:**
