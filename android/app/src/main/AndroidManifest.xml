@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="task_scheduler"
+        android:label="Scheduler.io"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

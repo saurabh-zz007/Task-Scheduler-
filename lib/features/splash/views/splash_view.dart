@@ -26,15 +26,9 @@ class _SplashViewState extends State<SplashView>
       duration: const Duration(milliseconds: 900),
     )..forward();
 
-    _scaleAnim = CurvedAnimation(
-      parent: _animCtrl,
-      curve: Curves.easeOutBack,
-    );
+    _scaleAnim = CurvedAnimation(parent: _animCtrl, curve: Curves.easeOutBack);
 
-    _fadeAnim = CurvedAnimation(
-      parent: _animCtrl,
-      curve: Curves.easeIn,
-    );
+    _fadeAnim = CurvedAnimation(parent: _animCtrl, curve: Curves.easeIn);
   }
 
   @override
@@ -120,37 +114,12 @@ class _SplashViewState extends State<SplashView>
 
                     // App Title
                     const Text(
-                      'Task Scheduler',
+                      'Scheduler.io',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 28,
                         fontWeight: FontWeight.w800,
                         letterSpacing: -0.6,
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-
-                    // App Subtitle / Role Badge
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 5,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.16),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.25),
-                        ),
-                      ),
-                      child: const Text(
-                        'GIG-WORKER TASK MANAGER',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10.5,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1.2,
-                        ),
                       ),
                     ),
                   ],
@@ -173,7 +142,7 @@ class _SplashViewState extends State<SplashView>
                   ),
                   const SizedBox(height: 14),
                   Text(
-                    'Connecting to Cloud Firestore...',
+                    'Just a moment, setting up everything...',
                     style: TextStyle(
                       color: Colors.white.withValues(alpha: 0.85),
                       fontSize: 12.5,
@@ -190,4 +159,3 @@ class _SplashViewState extends State<SplashView>
     );
   }
 }
-

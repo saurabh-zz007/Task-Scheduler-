@@ -93,11 +93,7 @@ class HomeView extends StatelessWidget {
           color: const Color(0xFFEF4444),
           child: Row(
             children: [
-              const Icon(
-                Icons.wifi_off_rounded,
-                color: Colors.white,
-                size: 16,
-              ),
+              const Icon(Icons.wifi_off_rounded, color: Colors.white, size: 16),
               const SizedBox(width: 10),
               const Expanded(
                 child: Text(
@@ -150,7 +146,7 @@ class HomeView extends StatelessWidget {
               SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  'Back online! Connected to Cloud Firestore.',
+                  'Back online! Ready to roll...',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 12.5,

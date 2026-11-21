@@ -5,7 +5,7 @@ import 'package:task_scheduler/features/tasks/models/task_model.dart';
 
 void main() {
   test('AppStrings constants smoke test', () {
-    expect(AppStrings.appName, 'Task Scheduler');
+    expect(AppStrings.appName, 'Scheduler.io');
     expect(AppStrings.welcomeBack, 'Welcome Back');
     expect(AppStrings.createAccount, 'Create Account');
     expect(AppStrings.facebookLocked, contains('locked'));

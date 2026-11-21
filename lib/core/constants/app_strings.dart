@@ -2,14 +2,16 @@ class AppStrings {
   AppStrings._();
 
   // App General
-  static const String appName = 'Task Scheduler';
+  static const String appName = 'Scheduler.io';
   static const String appTagline = 'Master Your Time & Productivity';
 
   // Auth Titles & Subtitles
   static const String welcomeBack = 'Welcome Back';
-  static const String loginSubtitle = 'Sign in to access your tasks and stay organized.';
+  static const String loginSubtitle =
+      'Sign in to access your tasks and stay organized.';
   static const String createAccount = 'Create Account';
-  static const String signupSubtitle = 'Sign up to start organizing and scheduling your life.';
+  static const String signupSubtitle =
+      'Sign up to start organizing and scheduling your life.';
 
   // Form Fields
   static const String fullName = 'Full Name';
@@ -46,9 +48,12 @@ class AppStrings {
   static const String googleCancelled = 'Google sign-in was cancelled';
   static const String facebookCancelled = 'Facebook sign-in was cancelled';
   static const String appleCancelled = 'Apple sign-in was cancelled';
-  static const String defaultError = 'An unexpected error occurred. Please try again.';
-  static const String facebookLocked = 'Facebook sign-in is currently locked and coming soon.';
-  static const String appleLocked = 'Apple sign-in is currently locked and coming soon.';
+  static const String defaultError =
+      'An unexpected error occurred. Please try again.';
+  static const String facebookLocked =
+      'Facebook sign-in is currently locked and coming soon.';
+  static const String appleLocked =
+      'Apple sign-in is currently locked and coming soon.';
 
   // Home View
   static const String homeTitle = 'Task Dashboard';
@@ -61,4 +66,3 @@ class AppStrings {
   static const String noEmail = 'No email provided';
   static const String anonymous = 'Anonymous User';
 }
-
